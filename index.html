@@ -477,29 +477,44 @@
                         </div>
                     </div>
 
-
+                    
                     <div class="project-card animate-on-scroll">
                         <h3 class="project-title">🚚 Delivery Time Prediction App</h3>
                         <p class="project-description">
-                            An intelligent machine learning application that predicts accurate delivery times based on historical shipment data, optimizing logistics planning for e-commerce and food delivery platforms.
+                            A full-stack ML application that predicts food delivery times using real-world features and historical data. Built with versioned data pipelines, MLflow experiment tracking, and automated CI/CD deployment to AWS.
                         </p>
+                        <ul class="project-description">
+                            <li>🧪 <strong>ML Pipeline:</strong> Data cleaning, feature engineering, training, and model selection via Optuna</li>
+                            <li>📁 <strong>ML Workflow:</strong> DVC for data versioning, tracked via Git and stored on AWS S3</li>
+                            <li>📋 <strong>Experiment Tracking:</strong> MLflow + Dagshub for experiment logging and model registry</li>
+                            <li>🚀 <strong>CI/CD:</strong> GitHub Actions → Docker → AWS ECR → EC2/CodeDeploy with rolling updates</li>
+                            <li>🔍 <strong>API Endpoint:</strong> Deployed via FastAPI with a live Swagger UI</li>
+                            <li>🗺️ <strong>Example:</strong> Predicts ETA for an order from Indore restaurant to urban delivery location with high traffic</li>
+                        </ul>
                         <div class="tech-stack">
-                            <span class="tech-tag">Machine Learning</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">Time Series</span>
-                            <span class="tech-tag">Logistics</span>
-                            <span class="tech-tag">Predictive Analytics</span>
                             <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Optuna</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">MLflow</span>
+                            <span class="tech-tag">DVC</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Data Engineering</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Logistics</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/AMR-ITH/DeliveryTimePredApp" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🔗</span> GitHub
                             </a>
-                            <a href="http://13.126.230.37/docs" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <a href="http://13.201.71.93/docs" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>⚡</span> API Docs
                             </a>
                         </div>
                     </div>
+
 
                     <div class="project-card animate-on-scroll">
                         <h3 class="project-title">💬 YouTube Comment Analyzer + Chrome Extension</h3>
