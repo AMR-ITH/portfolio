@@ -405,14 +405,15 @@
                         <div class="project-card animate-on-scroll">
                             <h3 class="project-title">🎵 Hybrid Spotify Recommendation System</h3>
                             <p class="project-description">
-                                A production-grade recommender system blending collaborative + content-based filtering, deployed with CI/CD pipelines on AWS. Built for scalability and performance using 9.7M-user × 34K-song sparse matrix.
+                                A production-grade hybrid recommender system combining content-based and collaborative filtering. Designed for scalability, performance, and automated CI/CD deployment on AWS.
                             </p>
                             <ul class="project-description">
-                                <li>🧠 Content-based filtering (cosine similarity on song metadata)</li>
-                                <li>🤝 Collaborative filtering (CSR matrix, 330M+ interactions)</li>
-                                <li>⚙️ ML Workflow: DVC, Git, artifact storage in AWS S3</li>
-                                <li>🚀 CI/CD: Docker → GitHub Actions → AWS ECR → CodeDeploy</li>
-                                <li>🎧 Example: Recommends similar songs to <strong>“Love Story” by Taylor Swift</strong></li>
+                                <li>🧠 Content-based filtering using cosine similarity on song metadata</li>
+                                <li>🤝 Collaborative filtering on a sparse matrix of 9.7M users × 34K songs (330M+ interactions)</li>
+                                <li>🎯 Hybrid score: Weighted average of both approaches for better personalization</li>
+                                <li>⚙️ ML Workflow: Versioned pipelines with DVC & Git, artifact storage in AWS S3</li>
+                                <li>🚀 CI/CD: Docker → GitHub Actions → AWS ECR → CodeDeploy (Blue/Green deployment)</li>
+                                <li>🎧 Example: Recommends similar tracks to <strong>“Love Story” by Taylor Swift</strong></li>
                             </ul>
                             <div class="tech-stack">
                                 <span class="tech-tag">Python</span>
@@ -432,6 +433,7 @@
                                 </a>
                             </div>
                         </div>
+
 
                     </div>
 
