@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - ML Engineer & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .projects {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #f1f5f9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .project-description {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #60a5fa;
+        }
+
+        .skills {
+            padding: 4rem 0;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+        }
+
+        .skill-list {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            color: #94a3b8;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #3b82f6;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Amrith P</h1>
+                    <p class="subtitle">Machine Learning Engineer & Developer</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="mailto:amrith.email@example.com" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll">
+                        <h3 class="project-title">🎵 Music Hybrid Recommender System</h3>
+                        <p class="project-description">
+                            A sophisticated hybrid recommender system that combines collaborative filtering and content-based filtering to deliver highly personalized music recommendations, improving user engagement and discovery.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/amrithp/music-hybrid-recsys" class="project-link">
+                                <span>🔗</span> GitHub
+                            </a>
+                            <a href="https://appapphybridrecsysgit-jdiu7sjcsnpqvytniwbf2f.streamlit.app/" class="project-link">
+                                <span>🚀</span> Live App
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <h3 class="project-title">🏠 Bangalore Apartment Price Analyzer</h3>
+                        <p class="project-description">
+                            A comprehensive regression-based system for predicting Bangalore apartment prices using property features. Helps users make informed real estate investment decisions with data-driven insights.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Regression</span>
+                            <span class="tech-tag">Data Analysis</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Real Estate</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/amrithp/BLRApartmentAnalyzer" class="project-link">
+                                <span>🔗</span> GitHub
+                            </a>
+                            <a href="https://apprealestateapp-ampnarww3zvyfodus39uf2.streamlit.app" class="project-link">
+                                <span>📊</span> Streamlit App
+                            </a>
+                            <a href="http://13.232.215.170/" class="project-link">
+                                <span>🚀</span> FastAPI Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <h3 class="project-title">🚚 Delivery Time Prediction App</h3>
+                        <p class="project-description">
+                            An intelligent machine learning application that predicts accurate delivery times based on historical shipment data, optimizing logistics planning for e-commerce and food delivery platforms.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Time Series</span>
+                            <span class="tech-tag">Logistics</span>
+                            <span class="tech-tag">Predictive Analytics</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/amrithp/DeliveryTimePredApp" class="project-link">
+                                <span>🔗</span> GitHub
+                            </a>
+                            <a href="http://13.126.230.37/docs" class="project-link">
+                                <span>⚡</span> API Docs
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <h3 class="project-title">💬 YouTube Comment Analyzer + Chrome Extension</h3>
+                        <p class="project-description">
+                            An end-to-end NLP project featuring a Chrome Extension frontend and Flask backend. Analyzes YouTube comments in real-time for toxicity detection and sentiment analysis to improve online discourse.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Chrome Extension</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Sentiment Analysis</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/amrithp/yt-comment-analyzer" class="project-link">
+                                <span>🔗</span> GitHub
+                            </a>
+                            <a href="#" class="project-link">
+                                <span>🧩</span> Extension
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">🤖</div>
+                        <h3 class="skill-title">Machine Learning</h3>
+                        <p class="skill-list">Scikit-learn, Pandas, NumPy, MLflow, DVC</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-title">Web Development</h3>
+                        <p class="skill-list">FastAPI, Flask, Streamlit, HTML/CSS, Chrome Extensions</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">📊</div>
+                        <h3 class="skill-title">Data Science</h3>
+                        <p class="skill-list">Data Analysis, Visualization, Statistical Modeling, NLP</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">🛠️</div>
+                        <h3 class="skill-title">Tools & Platforms</h3>
+                        <p class="skill-list">Git, Docker, AWS, MLflow, DVC, Streamlit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/amrithp" class="social-link" title="GitHub">💻</a>
+                <a href="https://www.linkedin.com/in/amrith-p-68706b116/" class="social-link" title="LinkedIn">💼</a>
+                <a href="#" class="social-link" title="Twitter">🐦</a>
+                <a href="mailto:amrith.email@example.com" class="social-link" title="Email">📧</a>
+            </div>
+            <p>&copy; 2025 Amrith P. Built with passion for ML and innovation.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive particles effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: rgba(59, 130, 246, 0.6);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                animation: float 6s linear forwards;
+            `;
+            
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+
+        // Create floating particles periodically
+        setInterval(createParticle, 2000);
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                to {
+                    transform: translateY(-${window.innerHeight + 100}px) translateX(${Math.random() * 200 - 100}px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add some interactivity to project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                card.style.background = `
+                    radial-gradient(circle at ${x}% ${y}%, 
+                    rgba(59, 130, 246, 0.15) 0%, 
+                    rgba(30, 41, 59, 0.8) 50%)
+                `;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.background = 'rgba(30, 41, 59, 0.8)';
+            });
+        });
+    </script>
+</body>
+</html>
