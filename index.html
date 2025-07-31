@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+.about, .education {
+            padding: 4rem 0;
+        }
+
+        .education {
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .about-content, .education-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .education-item {
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -300,6 +320,28 @@
             transform: translateY(0);
         }
 
+        .about, .education {
+            padding: 4rem 0;
+        }
+
+        .education {
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .about-content, .education-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .education-item {
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -329,7 +371,11 @@
                     <p class="subtitle">Machine Learning Engineer & Developer</p>
                     <div class="cta-buttons">
                         <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="mailto:amrith.email@example.com" class="btn btn-secondary">Get In Touch</a>
+                        <a href="https://www.linkedin.com/in/amrith-p-68706b116/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                    <div class="contact-info" style="margin-top: 2rem; color: #94a3b8; font-size: 1.1rem;">
+                        <p style="margin: 0.5rem 0;">📧 amrithputtur@gmail.com</p>
+                        <p style="margin: 0.5rem 0;">📱 +91 8861274472</p>
                     </div>
                 </div>
             </div>
@@ -337,6 +383,41 @@
     </header>
 
     <main>
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Me</h2>
+                <div class="about-content animate-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 2rem;">
+                        I'm a passionate Machine Learning Engineer specializing in traditional ML algorithms and statistical modeling. Currently pursuing M.Tech in Data Science and Engineering from BITS Pilani, I focus on building practical ML solutions that solve real-world problems with deployed applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="education" id="education">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Education</h2>
+                <div class="education-content animate-on-scroll" style="max-width: 600px; margin: 0 auto;">
+                    <div class="education-item" style="background: rgba(30, 41, 59, 0.8); border-radius: 15px; padding: 2rem; border: 1px solid rgba(59, 130, 246, 0.2); text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 1rem;">🎓</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.5rem;">
+                            M.Tech in Data Science and Engineering
+                        </h3>
+                        <p style="font-size: 1.2rem; color: #3b82f6; font-weight: 600; margin-bottom: 1rem;">
+                            BITS Pilani
+                        </p>
+                        <p style="color: #94a3b8; margin-bottom: 1rem;">
+                            Work Integrated Learning Programme • 2023 - 2025
+                        </p>
+                        <p style="color: #cbd5e1; line-height: 1.6;">
+                            Focusing on machine learning algorithms and statistical modeling. 
+                            The program provides strong foundations in data science with practical industry applications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="projects" id="projects">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">Featured Projects</h2>
@@ -355,10 +436,10 @@
                             <span class="tech-tag">Machine Learning</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/amrithp/music-hybrid-recsys" class="project-link">
+                            <a href="https://github.com/AMR-ITH/music-hybrid-recsys" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🔗</span> GitHub
                             </a>
-                            <a href="https://appapphybridrecsysgit-jdiu7sjcsnpqvytniwbf2f.streamlit.app/" class="project-link">
+                            <a href="https://appapphybridrecsysgit-jdiu7sjcsnpqvytniwbf2f.streamlit.app/" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🚀</span> Live App
                             </a>
                         </div>
@@ -378,13 +459,13 @@
                             <span class="tech-tag">Real Estate</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/amrithp/BLRApartmentAnalyzer" class="project-link">
+                            <a href="https://github.com/AMR-ITH/BLRApartmentAnalyzer" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🔗</span> GitHub
                             </a>
-                            <a href="https://apprealestateapp-ampnarww3zvyfodus39uf2.streamlit.app" class="project-link">
+                            <a href="https://apprealestateapp-ampnarww3zvyfodus39uf2.streamlit.app" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>📊</span> Streamlit App
                             </a>
-                            <a href="http://13.232.215.170/" class="project-link">
+                            <a href="http://13.232.215.170/" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🚀</span> FastAPI Demo
                             </a>
                         </div>
@@ -404,10 +485,10 @@
                             <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/amrithp/DeliveryTimePredApp" class="project-link">
+                            <a href="https://github.com/AMR-ITH/DeliveryTimePredApp" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🔗</span> GitHub
                             </a>
-                            <a href="http://13.126.230.37/docs" class="project-link">
+                            <a href="http://13.126.230.37/docs" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>⚡</span> API Docs
                             </a>
                         </div>
@@ -427,10 +508,10 @@
                             <span class="tech-tag">Python</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/amrithp/yt-comment-analyzer" class="project-link">
+                            <a href="https://github.com/AMR-ITH/yt-comment-analyzer" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🔗</span> GitHub
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="#" class="project-link" target="_blank" rel="noopener noreferrer">
                                 <span>🧩</span> Extension
                             </a>
                         </div>
@@ -446,7 +527,7 @@
                     <div class="skill-category animate-on-scroll">
                         <div class="skill-icon">🤖</div>
                         <h3 class="skill-title">Machine Learning</h3>
-                        <p class="skill-list">Scikit-learn, Pandas, NumPy, MLflow, DVC</p>
+                        <p class="skill-list">XGBoost, Gradient Boosting, Scikit-learn, Pandas, NumPy, MLflow, DVC</p>
                     </div>
                     <div class="skill-category animate-on-scroll">
                         <div class="skill-icon">🌐</div>
@@ -471,10 +552,10 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/amrithp" class="social-link" title="GitHub">💻</a>
-                <a href="https://www.linkedin.com/in/amrith-p-68706b116/" class="social-link" title="LinkedIn">💼</a>
-                <a href="#" class="social-link" title="Twitter">🐦</a>
-                <a href="mailto:amrith.email@example.com" class="social-link" title="Email">📧</a>
+                <a href="https://github.com/AMR-ITH" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">💻</a>
+                <a href="https://www.linkedin.com/in/amrith-p-68706b116/" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">💼</a>
+                <a href="#" class="social-link" title="Twitter" target="_blank" rel="noopener noreferrer">🐦</a>
+                <a href="mailto:amrithputtur@gmail.com" class="social-link" title="Email">📧</a>
             </div>
             <p>&copy; 2025 Amrith P. Built with passion for ML and innovation.</p>
         </div>
