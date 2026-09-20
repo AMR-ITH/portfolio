@@ -300,7 +300,7 @@
             transform: translateY(0);
         }
 
-        .about, .education {
+        .about, .education, .experience {
             padding: 4rem 0;
         }
 
@@ -320,6 +320,87 @@
             transform: translateY(-3px);
             border-color: rgba(59, 130, 246, 0.4);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-company {
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .experience-meta {
+            text-align: right;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .experience-meta p {
+            margin: 0.15rem 0;
+        }
+
+        .experience-bullets {
+            color: #cbd5e1;
+            line-height: 1.7;
+            padding-left: 1.2rem;
+        }
+
+        .experience-bullets li {
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-meta {
+                text-align: left;
+            }
         }
 
         @media (max-width: 768px) {
@@ -350,7 +431,8 @@
                     <h1>Amrith P</h1>
                     <p class="subtitle">Machine Learning Engineer & Developer</p>
                     <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#experience" class="btn btn-primary">View Experience</a>
+                        <a href="#projects" class="btn btn-secondary">View Projects</a>
                         <a href="https://www.linkedin.com/in/amrith-p-68706b116/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                     <div class="contact-info" style="margin-top: 2rem; color: #94a3b8; font-size: 1.1rem;">
@@ -368,8 +450,113 @@
                 <h2 class="section-title animate-on-scroll">About Me</h2>
                 <div class="about-content animate-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center;">
                     <p style="font-size: 1.2rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 2rem;">
-                        Data Scientist with experience in machine learning, MLOps, and automation. Skilled in building ML systems, developing CI/CD pipelines, and deploying scalable solutions on AWS. Strong background in EDA, feature engineering, and data pipelines. Eager to apply data-driven problem solving to real-world business challenges
+                        Data Scientist with 3+ years of experience in machine learning, data analysis, and AI. Experienced in building classification and regression models, developing RAG pipelines with LLMs, and deploying production ML solutions on AWS. Strong foundation in EDA, feature engineering, model evaluation, and data visualization, with hands-on experience in end-to-end ML productionization using Docker, CI/CD, and cloud platforms.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Experience</h2>
+                <div class="experience-timeline animate-on-scroll">
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Data Scientist</h3>
+                                <p class="experience-company">Optimalex · Full-time</p>
+                            </div>
+                            <div class="experience-meta">
+                                <p>Oct 2025 - Sep 2026 · 1 yr</p>
+                                <p>Remote</p>
+                            </div>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Built and evaluated classification and regression models for insurance claims prediction using linear, tree-based, and boosting algorithms.</li>
+                            <li>Developed models for liability, indemnity, expense, and claim duration, with preprocessing and feature engineering.</li>
+                            <li>Used ROC-AUC, F1, RMSE, MAE, and R² for model evaluation, with Optuna for tuning and SHAP for interpretability.</li>
+                            <li>Built a RAG pipeline to extract 26 structured fields from legal claim PDFs using LangChain, Qdrant, BM25, and Gemini.</li>
+                            <li>Implemented hybrid retrieval and structured LLM extraction with Pydantic and field-level provenance.</li>
+                        </ul>
+                        <div class="experience-skills">
+                            <span class="tech-tag">Feature Engineering</span>
+                            <span class="tech-tag">Data Science</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">LLMs</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Data Scientist</h3>
+                                <p class="experience-company">72 DRAGONS, LLC · Full-time</p>
+                            </div>
+                            <div class="experience-meta">
+                                <p>Dec 2022 - Aug 2025 · 2 yrs 9 mos</p>
+                                <p>Remote</p>
+                            </div>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Developed a real-time monitoring dashboard using Streamlit, reducing manual effort.</li>
+                            <li>Automated server and social media data collection via cron-scheduled Python scripts.</li>
+                            <li>Performed EDA on social media metrics to optimize campaign timing and content targeting, contributing to a 15% increase in engagement.</li>
+                            <li>Built web scrapers using httpx and selectolax to extract target profiles for sales outreach, increasing lead volume by 25%.</li>
+                            <li>Designed an alerting system with email automation, cutting incident response time by 40%.</li>
+                            <li>Stored API/server responses in MySQL using Python with structured logging for timeseries monitoring and alerts.</li>
+                        </ul>
+                        <div class="experience-skills">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Test Engineer</h3>
+                                <p class="experience-company">L&T Technology Services · Full-time</p>
+                            </div>
+                            <div class="experience-meta">
+                                <p>Oct 2021 - May 2022 · 8 mos</p>
+                                <p>Mysore, Karnataka, India · On-site</p>
+                            </div>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Automated testing of I2C, SPI, PWM, and ADC peripherals using Python and Pytest, improving test coverage and reducing manual effort.</li>
+                            <li>Designed and executed test cases based on Jira user stories; performed both manual and automated validation to ensure feature quality.</li>
+                            <li>Collaborated with cross-functional teams in an Agile Scrum environment, using Git/GitHub for version control and continuous integration.</li>
+                            <li>Gained hands-on experience with Selenium for web test automation, enhancing end-to-end testing capabilities.</li>
+                        </ul>
+                        <div class="experience-skills">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pytest</span>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-title">Quality Engineer</h3>
+                                <p class="experience-company">Geometry Engineering Innovations · Full-time</p>
+                            </div>
+                            <div class="experience-meta">
+                                <p>Nov 2019 - Apr 2021 · 1 yr 6 mos</p>
+                                <p>Bengaluru, Karnataka, India</p>
+                            </div>
+                        </div>
+                        <ul class="experience-bullets">
+                            <li>Automated quality inspection reports to improve efficiency and reduce manual errors.</li>
+                            <li>Developed Excel dashboards to track raw material inventory, ensuring availability and minimizing delays.</li>
+                            <li>Designed performance dashboards for various departments, analyzing data on a monthly and quarterly basis to identify trends and areas for improvement.</li>
+                            <li>Analyzed Non-Conformance (NC) reports to identify quality issues and implement corrective actions, enhancing product reliability.</li>
+                            <li>Conducted raw material verification and inspection, including cutting sample pieces for testing, to ensure compliance with specifications before production.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -558,13 +745,8 @@
                 <div class="skills-grid">
                     <div class="skill-category animate-on-scroll">
                         <div class="skill-icon">💻</div>
-                        <h3 class="skill-title">Programming</h3>
+                        <h3 class="skill-title">Languages</h3>
                         <p class="skill-list">Python, SQL</p>
-                    </div>
-                    <div class="skill-category animate-on-scroll">
-                        <div class="skill-icon">🤖</div>
-                        <h3 class="skill-title">Machine Learning</h3>
-                        <p class="skill-list">Scikit-learn, XGBoost, Gradient Boosting, NLTK, Optuna</p>
                     </div>
                     <div class="skill-category animate-on-scroll">
                         <div class="skill-icon">📊</div>
@@ -572,19 +754,24 @@
                         <p class="skill-list">Pandas, NumPy, MySQL, ETL Pipelines</p>
                     </div>
                     <div class="skill-category animate-on-scroll">
-                        <div class="skill-icon">📈</div>
-                        <h3 class="skill-title">Visualization</h3>
-                        <p class="skill-list">Matplotlib, Seaborn, Plotly, Power BI</p>
-                    </div>
-                    <div class="skill-category animate-on-scroll">
-                        <div class="skill-icon">🌐</div>
-                        <h3 class="skill-title">Web Frameworks</h3>
-                        <p class="skill-list">Flask, Streamlit </p>
+                        <div class="skill-icon">🤖</div>
+                        <h3 class="skill-title">ML/AI</h3>
+                        <p class="skill-list">Scikit-learn, XGBoost, LightGBM, NLTK, Optuna, LangChain</p>
                     </div>
                     <div class="skill-category animate-on-scroll">
                         <div class="skill-icon">⚙️</div>
                         <h3 class="skill-title">MLOps</h3>
-                        <p class="skill-list">Git, DVC, MLflow, Docker, CI/CD Pipelines, AWS (EC2, CodeDeploy, ECR, S3)</p>
+                        <p class="skill-list">Git, DVC, MLflow, Docker, CI/CD, AWS</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">📈</div>
+                        <h3 class="skill-title">Visualization</h3>
+                        <p class="skill-list">Matplotlib, Seaborn, Plotly</p>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-title">Web</h3>
+                        <p class="skill-list">Flask, Streamlit</p>
                     </div>
                 </div>
             </div>
